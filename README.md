@@ -1,49 +1,25 @@
-# CakeStrap v 0.1
+# CMS v 0.1
 ---
-CakeStrap is a simple HTML5 Ready Bootstrap for CakePHP Applications.
+
+### Como instalar um módulo
+Va até o arquivo `app/Config/Bootstrap.php` e acrescente a seguinte linha: ( Cada modulo terá seu nome )
+<pre>CakePlugin::load('ModulePosts');</pre>
 
 
-### Video tutorial ( Portuguese )
-[http://youtu.be/m4FtYIS3Rm8][]
-[http://youtu.be/m4FtYIS3Rm8]: http://youtu.be/m4FtYIS3Rm8
+### Modulos disponíveis
+---
+##### Modulo notícias
+<pre>CakePlugin::load('ModulePosts');</pre>
+Tabela necessária
 
-
-### Features
-##### Front-end
-1. Responsive Web Design
-2. HTML5 Boilerplate
-3. RequireJS
-4. Modernizr
-5. Twitter Bootstrap
-
-##### Back-end
-1. CakePHP 2.0.x Security Authentication
-2. Users CRUD
-
-
-## Quick start
-
-- Create a table named `users` in your database with the following structure:
-
-
-<pre>CREATE TABLE users (
-id int(11) NOT NULL AUTO_INCREMENT,
-username varchar(255) NOT NULL,
-password varchar(255) NOT NULL,
-name varchar(255) NOT NULL,
-role varchar(20) NOT NULL,
-created datetime NOT NULL,
-modified datetime NOT NULL,
-PRIMARY KEY (id)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+<pre>
+CREATE TABLE  `cakestrap`.`posts` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`title` VARCHAR( 255 ) NOT NULL ,
+`content` TEXT NOT NULL ,
+`created` DATETIME NOT NULL ,
+`modified` DATETIME NOT NULL
+) ENGINE = INNODB;
 </pre>
 
-
-- Open the file `app/Config/database.php` and change the database information
-- Change the permissions of the folder `app/tmp` to 777 ( and all the folders inside of it )
-
-
-## Questions / Bugs
-
-Have a question or found a bug? Please create an issue [here][] on GitHub!
-[here]: https://github.com/hugodias/cakestrap/issues
+---
