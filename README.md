@@ -1,7 +1,24 @@
 # CMS v 0.1
 ---
 
-### Como instalar um módulo
+## Instalando
+Crie uma tabela `users` em seu banco de dados com a seguinte estrutura
+<pre>
+CREATE TABLE users (
+id int(11) NOT NULL AUTO_INCREMENT,
+username varchar(255) NOT NULL,
+password varchar(255) NOT NULL,
+name varchar(255) NOT NULL,
+role varchar(20) NOT NULL,
+created datetime NOT NULL,
+modified datetime NOT NULL,
+PRIMARY KEY (id)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+</pre>
+
+---
+
+## Como instalar um módulo
 Va até o arquivo `app/Config/Bootstrap.php` e acrescente a seguinte linha: ( Cada modulo terá seu nome )
 <pre>CakePlugin::load('ModulePosts');</pre>
 
@@ -13,7 +30,7 @@ Va até o arquivo `app/Config/Bootstrap.php` e acrescente a seguinte linha: ( Ca
 Tabela necessária
 
 <pre>
-CREATE TABLE  `cakestrap`.`posts` (
+CREATE TABLE  `posts` (
 `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 `title` VARCHAR( 255 ) NOT NULL ,
 `content` TEXT NOT NULL ,
