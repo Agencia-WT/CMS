@@ -1,6 +1,4 @@
 <div class="row-fluid">
-	<div class="span12">
-
 		<?php  
 		echo $this->Form->create
 		(
@@ -22,6 +20,8 @@
 			)
 		); 
 		?>	
+	<div class="span8">
+
 			<fieldset>
 
 				<div class="control-group">
@@ -53,6 +53,25 @@
 				</div>
 
 			</fieldset>
-		</form>
 	</div>
+
+	<div class="span3">
+		<fieldset>
+				<div class="control-group">
+					<label for="" class="control-label"><?php echo __('Categorias') ?></label>
+					<div class="controls">
+
+						<?php echo $this->Form->input('Category',
+						array(
+							'multiple' => 'checkbox',
+							'options' => $category_options,
+							'selected' => !empty($post['Checkbox']) ? $post['Checkbox'] : ''
+							) 
+						) ?>			
+					</div>
+				</div>		
+							
+		</fieldset>
+	</div>	
+	</form>
 </div>

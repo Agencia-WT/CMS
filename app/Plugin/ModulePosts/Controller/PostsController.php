@@ -2,6 +2,8 @@
 class PostsController extends ModulePostsAppController
 {
 
+	public $uses = array('ModulePosts.Category','ModulePosts.Post');
+
   public $paginate = array(
       'limit' => 25,
       'order' => array(
@@ -12,13 +14,13 @@ class PostsController extends ModulePostsAppController
 	public function beforeFilter()
 	{
 		parent::beforeFilter();
+		$this->set('category_options', $this->Category->find('list', array('fields' => array('id','name'))));
 	}
 
 
 	public function index()
-	{
-		$posts = $this->paginate('Post');
-    $this->set(compact('posts'));		
+	{	
+		$this->set('posts', $this->Post->find('all'));
 	}
 
 	public function add()
@@ -35,7 +37,11 @@ class PostsController extends ModulePostsAppController
 
 	public function edit( $id = null )
 	{
-		$this->set('post',$this->Post->findById($id) );
+
+		$post = $this->Post->findById($id);
+		$post['Checkbox'] = Set::extract($post['Category'], '{n}.id');
+
+		$this->set('post', $post );
 
 		if( $this->request->is('post') )
 		{

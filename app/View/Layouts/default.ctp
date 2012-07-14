@@ -41,6 +41,14 @@
               </li>
               <?php } ?>
 
+              <?php $modules = CakePlugin::loaded(); ?>
+
+              <?php if( in_array('ModulePosts',$modules) ): ?>
+              <li class="<?php echo $this->params->controller == 'posts' ? 'active': ''?>">
+                <?php echo $this->Html->link('Notícias','/module_posts/posts') ?>
+              </li>              
+              <?php endif; ?>
+
               
             </ul>
             <ul class="nav pull-right">

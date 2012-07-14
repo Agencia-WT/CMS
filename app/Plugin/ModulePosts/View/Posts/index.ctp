@@ -1,3 +1,24 @@
+<div class="row-fluid">
+  <div class="span12">
+    <ul class="breadcrumb">
+      <li>
+        <?php echo $this->Html->link('Home','/') ?> <span class="divider">/</span>
+      </li>
+      <li class="active">Posts</li>
+    </ul> 
+    <hr>    
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span11">
+    <h2>Notícias</h2>
+  </div>
+  <div class="span1">
+    <?php echo $this->Html->link('Adicionar','/module_posts/posts/add',array('class' => 'btn btn-primary')) ?>
+  </div>  
+</div>
+<hr>
 <table class="table table-bordered">
   <thead>
     <tr>

@@ -37,6 +37,7 @@ class AppController extends Controller {
 
 	public function beforeFilter()
 	{
+
 		$this->Auth->authenticate = array('Form');
 
 		$this->Auth->loginRedirect = array('action' => 'home', 'controller' => 'users');
